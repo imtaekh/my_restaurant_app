@@ -1,0 +1,13 @@
+<h2>Menu List</h2>
+<ul>
+<% @menu.each do |m| %>
+  <li><%=m.id%> Name: <%=m.name%>,URL: <%=m.pic_url%>,price: <%=m.price%> </li>
+  <form action="/menu/edit/<%=m.id%>" method="GET">
+    <input type="submit" value="Edit">
+  </form>
+  <form action="/menu/<%=m.id%>" method="post">
+    <input type="hidden" name="_method" value="DELET">
+    <input type="submit" value="Delete">
+  </form>
+<% end %>
+</ul>

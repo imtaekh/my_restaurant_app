@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1>Welcome to Imtaek's Korean Reaturant</h1>
-
+    <%=params.to_s%>
     <%=yield%>
   </body>
 </html>

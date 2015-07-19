@@ -1,0 +1,25 @@
+<h2>Edit Menu</h2>
+
+<form class="menu_form" action="/menu/edit/<%=@menu.id%>" method="post">
+
+    <input name="_method" type="hidden" value="patch" />
+<div>
+  <label for "menu_name">Name: </label>
+  <input type="string" name="menu[name]" value = "<%=@menu.name%>">
+</div>
+
+<div>
+  <label for "menu_pic_url">Picture URL: </label>
+  <input type="text" name="menu[pic_url]" value = "<%=@menu.pic_url%>">
+</div>
+
+<div>
+  <label for "menu_price">Price: </label>
+  <input type="number" name="menu[price]" value = "<%=@menu.price%>">
+</div>
+
+<div>
+  <input type="submit" class="btn" value="Edit Menu">
+</div>
+
+</form>

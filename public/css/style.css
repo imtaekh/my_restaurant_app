@@ -4,3 +4,8 @@ h1{
 h2{
   font-size: 30px;
 }
+
+.menu_form label{
+  display: inline-block;
+  width: 100px;
+}
