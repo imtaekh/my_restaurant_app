@@ -1,6 +1,6 @@
 class MyRestaurantApp < Sinatra::Base
   get "/" do
-    "welcome"
+    erb "welcome"
   end
 
   get "/menu/all" do
@@ -19,7 +19,7 @@ class MyRestaurantApp < Sinatra::Base
   end
 
   patch "/menu/edit/:id" do
-    @menu = User.find_by(id: params[:id])
+    @menu = Menu.find_by(id: params[:id])
     @menu.update(params[:menu])
     redirect "menu/all"
   end

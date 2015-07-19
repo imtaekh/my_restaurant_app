@@ -1,12 +1,12 @@
-require "rubygems"
-require "bundler"
+require 'rubygems'
+require 'bundler'
 Bundler.require
 
-#models
-require "./models/menu.rb"
-require "./models/order.rb"
+require './models/menu.rb'
+require './models/order.rb'
 
 #controller
-require "./app.rb"
+require './app.rb'
 
+use Rack::MethodOverride
 run MyRestaurantApp
