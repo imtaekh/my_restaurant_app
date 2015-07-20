@@ -1,9 +1,10 @@
 class CreateMyRestaurantApp < ActiveRecord::Migration
   def change
-    create_table :menus do |t|
+    create_table :menu_items do |t|
       t.string :name
       t.text :pic_url
-      t.integer :price
+      t.float :price
+      t.text :description
     end
     create_table :orders do |t|
       t.integer :num_of_customer

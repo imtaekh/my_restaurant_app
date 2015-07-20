@@ -4,34 +4,41 @@ class MyRestaurantApp < Sinatra::Base
   end
 
   get "/menu/all" do
-    @menu = Menu.all
+    @menu = MenuItem.order(:id)
     erb :menu_all
   end
 
   get "/menu/new" do
-    @menu = Menu.new
+    @menu = MenuItem.new
     erb :menu_new
   end
 
   post "/menu/new" do
-    Menu.create(params[:menu])
+    MenuItem.create(params[:menu])
     redirect "menu/all"
   end
 
-  patch "/menu/edit/:id" do
-    @menu = Menu.find_by(id: params[:id])
+  get "/menu/:id/edit" do
+    @menu = MenuItem.find_by(id: params[:id])
+    erb :menu_edit
+  end
+
+  patch "/menu/:id/edit" do
+    @menu = MenuItem.find(params[:id])
     @menu.update(params[:menu])
     redirect "menu/all"
   end
 
-  get "/menu/edit/:id" do
-    @menu = Menu.find_by(id: params[:id])
-    erb :menu_edit
+  get "/menu/:id" do
+    @menu = MenuItem.find(params[:id])
+    erb :menu_item
   end
 
-  post "/menu/edit" do
-    Menu.create(params[:menu])
-    redirect "menu/all"
+  delete "/menu/:id" do
+    @menu = MenuItem.find(params[:id])
+    @menu.destroy
+    redirect("/menu/all")
+    erb :menu_item
   end
 
   get "/order/all" do

@@ -2,7 +2,7 @@ require 'rubygems'
 require 'bundler'
 Bundler.require
 
-require './models/menu.rb'
+require './models/menu_item.rb'
 require './models/order.rb'
 
 #controller

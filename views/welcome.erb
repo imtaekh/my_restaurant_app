@@ -1,1 +1,10 @@
 <h2>Welcome to Imtaek's Korean Restaurant!</h2>
+<div class="welcome">
+
+  <h3>Today's Special<h3>
+    <% special_menu=1
+    @menu=MenuItem.find_by(id: special_menu)
+    %>
+    <a href="/menu/<%=@menu.id%>"><img src="<%=@menu.pic_url%>" alt="<%=@menu.name%>"></a>
+
+</div>

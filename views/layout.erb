@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+  <%=params.to_s%>
   <header>
-    <h1>Welcome to Imtaek's Korean Restaurant</h1>
+    <h1>Imtaek's Korean Restaurant</h1>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
@@ -19,6 +20,10 @@
   </header>
   <div class="container">
     <%=yield%>
+
+    <footer>
+      Facebook | Twitter | Instagram | Phone# | address
+    </footer>
   </div>
 </body>
 </html>
