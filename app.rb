@@ -1,6 +1,6 @@
 class MyRestaurantApp < Sinatra::Base
   get "/" do
-    erb "welcome"
+    erb :welcome
   end
 
   get "/menu/all" do
